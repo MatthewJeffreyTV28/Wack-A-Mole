@@ -27,25 +27,25 @@ class GameScreen(Screen):
         #Update X position
     
         if self.state["molePos"][0] >= 750:
-            self.upX = 1
+            self.upX = False
         if self.state["molePos"][0] <= 50:
-            self.upX = 2
+            self.upX = True
 
-        if self.upX == 1:
+        if self.upX == False:
             newX = -self.speed
-        if self.upX == 2:
+        if self.upX == True:
             newX = self.speed
 
         #Update Y position
     
         if self.state["molePos"][1] >= 550:
-            self.upY = 1
+            self.upY = False
         if self.state["molePos"][1] <= 50:
-            self.upY = 2
+            self.upY = True
 
-        if self.upY == 1:
+        if self.upY == False:
             newY = -self.speed
-        if self.upY == 2:
+        if self.upY == True:
             newY = self.speed
     
         return ((currPos[0] + newX), (currPos[1] + newY))
